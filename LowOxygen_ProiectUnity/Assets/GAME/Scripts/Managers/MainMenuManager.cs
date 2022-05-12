@@ -143,7 +143,7 @@ public class MainMenuManager : MonoBehaviour
         {
             menuGroup.alpha -= Time.fixedDeltaTime / 3;
 
-            yield return new WaitForSeconds(Time.deltaTime);
+            yield return new WaitForSeconds(Time.fixedDeltaTime);
         }
         yield return new WaitForSeconds(1f);
         introAnimator.Play("Intro");
@@ -155,7 +155,7 @@ public class MainMenuManager : MonoBehaviour
     {
         while(blackScreen.color.a < 1)
         {
-            blackScreen.color += new Color(0, 0, 0, Time.fixedDeltaTime / 2);
+            blackScreen.color += new Color(0, 0, 0, Time.fixedDeltaTime);
 
             yield return new WaitForSeconds(Time.fixedDeltaTime);
         }

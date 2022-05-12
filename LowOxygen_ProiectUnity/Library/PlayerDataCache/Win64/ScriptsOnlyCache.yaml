@@ -1,5 +1,7 @@
 ScriptsOnlyBuild:
   usedScripts:
+    Assembly-CSharp-Editor.dll:
+    - ReadmeEditor
     Assembly-CSharp.dll:
     - AirlockZone
     - AudioManager
@@ -10,11 +12,11 @@ ScriptsOnlyBuild:
     - DestroyInitialZone
     - DialogueTriggerZone
     - FadeInScreen
-    - FrogHatCollectible
     - GameDataManager
     - GameManager
     - GasCollectible
     - GrowPlantTopSprite
+    - HatCollectible
     - MainMenuManager
     - MenuCinematicScript
     - MovingPlatform
@@ -28,7 +30,9 @@ ScriptsOnlyBuild:
     - Player_Collision
     - Player_Controller
     - Player_Dialogue
+    - Player_Hats
     - PressureButton
+    - Readme
     - RocketFuel
     - RocketObject
     - RoomManager
@@ -36,6 +40,7 @@ ScriptsOnlyBuild:
     - Switch_Ladder
     - Switch_SpaceZone
     - TiledSpriteScale
+    - TurboManager
     Cinemachine.dll:
     - Cinemachine.CinemachineBasicMultiChannelPerlin
     - Cinemachine.CinemachineBrain
@@ -47,7 +52,6 @@ ScriptsOnlyBuild:
     - UnityEditor.U2D.Animation.BoneGizmo
     Unity.2D.IK.Editor.dll:
     - UnityEditor.U2D.IK.IKEditorManager
-    - UnityEditor.U2D.IK.IKGizmos
     Unity.2D.Tilemap.Editor.dll:
     - UnityEditor.Tilemaps.GridBrush
     - UnityEditor.Tilemaps.GridBrushEditor
@@ -55,7 +59,6 @@ ScriptsOnlyBuild:
     - UnityEditor.Tilemaps.GridPaintPaletteWindow
     - UnityEditor.Tilemaps.GridPaintingState
     - UnityEditor.Tilemaps.GridPaletteBrushes
-    - UnityEditor.Tilemaps.GridPalettes
     - UnityEditor.Tilemaps.PaintableSceneViewGrid
     - UnityEditor.Tilemaps.SceneViewGridManager
     - UnityEditor.Tilemaps.SceneViewOpenTilePaletteHelper
@@ -103,6 +106,7 @@ ScriptsOnlyBuild:
     - UnityEngine.Experimental.Rendering.Universal.Light2D
     - UnityEngine.Experimental.Rendering.Universal.Renderer2DData
     - UnityEngine.Rendering.Universal.Bloom
+    - UnityEngine.Rendering.Universal.DepthOfField
     - UnityEngine.Rendering.Universal.PostProcessData
     - UnityEngine.Rendering.Universal.UniversalAdditionalCameraData
     - UnityEngine.Rendering.Universal.UniversalRenderPipelineAsset
@@ -168,6 +172,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 61
       Script: {instanceID: 0}
+    - Class: 65
+      Script: {instanceID: 0}
     - Class: 66
       Script: {instanceID: 0}
     - Class: 70
@@ -194,6 +200,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 1642}
     - Class: 114
       Script: {instanceID: 1874}
+    - Class: 114
+      Script: {instanceID: 1906}
     - Class: 114
       Script: {instanceID: 1908}
     - Class: 114
@@ -245,55 +253,57 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 4888}
     - Class: 114
-      Script: {instanceID: 5018}
+      Script: {instanceID: 5020}
     - Class: 114
-      Script: {instanceID: 5126}
+      Script: {instanceID: 5128}
     - Class: 114
-      Script: {instanceID: 5192}
+      Script: {instanceID: 5194}
     - Class: 114
-      Script: {instanceID: 5330}
+      Script: {instanceID: 5332}
     - Class: 114
-      Script: {instanceID: 5374}
+      Script: {instanceID: 5376}
     - Class: 114
-      Script: {instanceID: 5564}
+      Script: {instanceID: 5566}
     - Class: 114
-      Script: {instanceID: 5698}
+      Script: {instanceID: 5700}
     - Class: 114
-      Script: {instanceID: 5738}
+      Script: {instanceID: 5740}
     - Class: 114
-      Script: {instanceID: 5862}
+      Script: {instanceID: 5864}
     - Class: 114
-      Script: {instanceID: 5894}
+      Script: {instanceID: 5896}
     - Class: 114
-      Script: {instanceID: 6006}
+      Script: {instanceID: 6008}
     - Class: 114
-      Script: {instanceID: 6196}
+      Script: {instanceID: 6028}
     - Class: 114
-      Script: {instanceID: 6204}
+      Script: {instanceID: 6200}
     - Class: 114
-      Script: {instanceID: 6364}
+      Script: {instanceID: 6208}
     - Class: 114
-      Script: {instanceID: 6628}
+      Script: {instanceID: 6368}
     - Class: 114
-      Script: {instanceID: 6668}
+      Script: {instanceID: 6632}
     - Class: 114
-      Script: {instanceID: 6690}
+      Script: {instanceID: 6672}
     - Class: 114
-      Script: {instanceID: 6730}
+      Script: {instanceID: 6694}
     - Class: 114
-      Script: {instanceID: 6790}
+      Script: {instanceID: 6734}
     - Class: 114
-      Script: {instanceID: 6930}
+      Script: {instanceID: 6794}
     - Class: 114
-      Script: {instanceID: 6952}
+      Script: {instanceID: 6934}
     - Class: 114
-      Script: {instanceID: 7178}
+      Script: {instanceID: 6956}
     - Class: 114
-      Script: {instanceID: 7640}
+      Script: {instanceID: 7182}
     - Class: 114
-      Script: {instanceID: 7728}
+      Script: {instanceID: 7644}
     - Class: 114
-      Script: {instanceID: 7840}
+      Script: {instanceID: 7732}
+    - Class: 114
+      Script: {instanceID: 7844}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -414,73 +424,75 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 4888}
     - Class: 114
-      Script: {instanceID: 5018}
+      Script: {instanceID: 4902}
     - Class: 114
-      Script: {instanceID: 5060}
+      Script: {instanceID: 5020}
     - Class: 114
       Script: {instanceID: 5062}
     - Class: 114
-      Script: {instanceID: 5076}
+      Script: {instanceID: 5064}
     - Class: 114
-      Script: {instanceID: 5126}
+      Script: {instanceID: 5078}
     - Class: 114
-      Script: {instanceID: 5132}
+      Script: {instanceID: 5128}
     - Class: 114
-      Script: {instanceID: 5214}
+      Script: {instanceID: 5134}
     - Class: 114
-      Script: {instanceID: 5324}
+      Script: {instanceID: 5216}
     - Class: 114
       Script: {instanceID: 5326}
     - Class: 114
-      Script: {instanceID: 5330}
+      Script: {instanceID: 5328}
     - Class: 114
-      Script: {instanceID: 5352}
+      Script: {instanceID: 5332}
     - Class: 114
-      Script: {instanceID: 5616}
+      Script: {instanceID: 5354}
     - Class: 114
-      Script: {instanceID: 5698}
+      Script: {instanceID: 5618}
     - Class: 114
-      Script: {instanceID: 5738}
+      Script: {instanceID: 5700}
     - Class: 114
-      Script: {instanceID: 5886}
+      Script: {instanceID: 5740}
     - Class: 114
-      Script: {instanceID: 5894}
+      Script: {instanceID: 5888}
     - Class: 114
-      Script: {instanceID: 5956}
+      Script: {instanceID: 5896}
     - Class: 114
-      Script: {instanceID: 5962}
+      Script: {instanceID: 5958}
     - Class: 114
-      Script: {instanceID: 6058}
+      Script: {instanceID: 5964}
     - Class: 114
-      Script: {instanceID: 6090}
+      Script: {instanceID: 6062}
     - Class: 114
-      Script: {instanceID: 6134}
+      Script: {instanceID: 6094}
     - Class: 114
-      Script: {instanceID: 6196}
+      Script: {instanceID: 6138}
     - Class: 114
-      Script: {instanceID: 6206}
+      Script: {instanceID: 6200}
     - Class: 114
-      Script: {instanceID: 6312}
+      Script: {instanceID: 6210}
     - Class: 114
-      Script: {instanceID: 6446}
+      Script: {instanceID: 6316}
     - Class: 114
-      Script: {instanceID: 6558}
+      Script: {instanceID: 6450}
     - Class: 114
-      Script: {instanceID: 6610}
+      Script: {instanceID: 6562}
     - Class: 114
-      Script: {instanceID: 6730}
+      Script: {instanceID: 6614}
     - Class: 114
-      Script: {instanceID: 7188}
+      Script: {instanceID: 6734}
     - Class: 114
-      Script: {instanceID: 7464}
+      Script: {instanceID: 7192}
     - Class: 114
-      Script: {instanceID: 7500}
+      Script: {instanceID: 7468}
     - Class: 114
-      Script: {instanceID: 7640}
+      Script: {instanceID: 7504}
     - Class: 114
-      Script: {instanceID: 7728}
+      Script: {instanceID: 7644}
     - Class: 114
-      Script: {instanceID: 7730}
+      Script: {instanceID: 7732}
+    - Class: 114
+      Script: {instanceID: 7734}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -652,7 +664,7 @@ ScriptsOnlyBuild:
     className: RenderObjects
   - hash:
       serializedVersion: 2
-      Hash: 0350b768135399cc32acf6c2c84158d3
+      Hash: 2a067187aa03e0813b16ea9b63cc3f56
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: RocketObject
@@ -700,10 +712,10 @@ ScriptsOnlyBuild:
     className: SplitToning
   - hash:
       serializedVersion: 2
-      Hash: 258c9320b15d281ad29e7caeba0c9479
+      Hash: 82af0042f5c7020b5c889263c01082b3
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: FrogHatCollectible
+    className: HatCollectible
   - hash:
       serializedVersion: 2
       Hash: 841f439a20b4a381d5a0c5ec9e36deda
@@ -1246,7 +1258,7 @@ ScriptsOnlyBuild:
     className: CinemachineBlendListCamera
   - hash:
       serializedVersion: 2
-      Hash: 5c8c4a2b5ffb5695ebee85aed2fdea6f
+      Hash: 51cd3e326c5bc02447fa10f2e315b3af
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Player
@@ -1262,6 +1274,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.RenderPipelines.Core.Runtime.dll
     namespaceName: UnityEngine.Rendering
     className: VolumeProfile
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: TurboManager
   - hash:
       serializedVersion: 2
       Hash: 694d20920c0e41f567e119f7159a3644
@@ -1544,6 +1562,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Danger
+  - hash:
+      serializedVersion: 2
+      Hash: 194d92a8145d50ffbf6610b959474019
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Player_Hats
   - hash:
       serializedVersion: 2
       Hash: bb6b9a25e695d7981ce2d853a697a828
@@ -1870,7 +1894,7 @@ ScriptsOnlyBuild:
     className: SpriteLibraryAsset
   - hash:
       serializedVersion: 2
-      Hash: 857347ac6eb31498e6388094989a98c8
+      Hash: 502d6798186ad55ee9814f23dd5ddec1
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: MainMenuManager
@@ -1956,4 +1980,4 @@ ScriptsOnlyBuild:
   scenePathNames:
   - Assets/GAME/Scenes/Main Menu.unity
   - Assets/GAME/Scenes/Game.unity
-  playerPath: C:/Users/alexn/Desktop/LOW OYXGEN EXE/Low Oxygen.exe
+  playerPath: E:/Unity game clasa a XI/LowOxygen/LowOxygen_Executabil/Low Oxygen.exe

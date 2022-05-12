@@ -15,7 +15,7 @@ public class MenuCinematicScript : MonoBehaviour
     }
     public void RocketShake()
     {
-        AudioManager.Instance.PlaySound(rocketSound, 1f, 0.5f, false);
+        //AudioManager.Instance.PlaySound(rocketSound, 1f, 0.5f, false);
         CameraManager.Instance.ScreenShake(0.2f, 5f,CameraManager.FadeType.OUT);
     }
 }
