@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1536
     height: 820.8
   m_ShowMode: 4
-  m_Title: Inspector
+  m_Title: Scene
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -122,7 +122,7 @@ MonoBehaviour:
   m_MinSize: {x: 708, y: 471}
   m_MaxSize: {x: 18003, y: 14021}
   vertical: 0
-  controlID: 166
+  controlID: 66
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -450,9 +450,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 1a550000
-      m_LastClickedID: 21786
-      m_ExpandedIDs: d4f6ffff1a550000
+      m_SelectedIDs: 
+      m_LastClickedID: 0
+      m_ExpandedIDs: 44abffffc2abffffc2f5ffffeef5ffff44fbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -529,17 +529,17 @@ MonoBehaviour:
   m_ShowContextualTools: 0
   m_WindowGUID: 69631fca2312ff242bf021ee6c579fb8
   m_Gizmos: 1
-  m_OverrideSceneCullingMask: 0
-  m_SceneIsLit: 0
+  m_OverrideSceneCullingMask: 6917529027641081856
+  m_SceneIsLit: 1
   m_SceneLighting: 1
   m_2DMode: 1
   m_isRotationLocked: 0
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -13.530383, y: -8.509167, z: -7.404253}
+    m_Target: {x: 338.12488, y: 42.844234, z: -3.8855195}
     speed: 2
-    m_Value: {x: -13.241189, y: -8.488052, z: -8.900327}
+    m_Value: {x: 338.12488, y: 42.844234, z: -3.8855195}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -551,7 +551,7 @@ MonoBehaviour:
   m_SceneViewState:
     m_AlwaysRefresh: 0
     showFog: 1
-    showSkybox: 0
+    showSkybox: 1
     showFlares: 1
     showImageEffects: 1
     showParticleSystems: 1
@@ -590,9 +590,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 0.97184974
+    m_Target: 31.764778
     speed: 2
-    m_Value: 0.70393825
+    m_Value: 31.764778
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -680,21 +680,21 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/GAME/Prefabs/Objects
+    - Assets/OLD
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/GAME/Prefabs/Objects
+  - Assets/OLD
   m_LastFoldersGridSize: 16
   m_LastProjectPath: E:\Unity game clasa a XI\LowOxygen\LowOxygen_ProiectUnity
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 17}
-    m_SelectedIDs: 6e510000
-    m_LastClickedID: 20846
+    m_SelectedIDs: 22510000
+    m_LastClickedID: 20770
     m_ExpandedIDs: 000000001e51000020510000225100005051000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -750,22 +750,22 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 1
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c62300005e4c0000d04e0000dcd4000036ad0000de9c0000e29c0000bc4c0000624d0000f24c0000c4560000325000009a78000080b50000d64c0000e0600000be5000004c8a0100dc5000006e51000026990000365700004c5200005c520000ec4e0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: PLANT GROW
-      m_OriginalName: PLANT GROW
+      m_Name: 
+      m_OriginalName: 
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 20864
+      m_UserData: 0
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 0
+      m_OriginalEventType: 11
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 11}
     m_CreateAssetUtility:
