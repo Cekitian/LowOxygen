@@ -31,6 +31,7 @@ public class Plant_Grow_TopCollider : MonoBehaviour
 
             if(groundHit.Count == 0)
             {
+                if(gameObject.activeInHierarchy)
                 gameObject.GetComponentInParent<Plant_Grow>().ChangeGrowState(true);
             }
 
