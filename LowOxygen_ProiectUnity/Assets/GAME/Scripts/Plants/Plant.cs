@@ -69,16 +69,33 @@ public class Plant : MonoBehaviour
 
     private void IsGrounded()
     {
-        RaycastHit2D ray = Physics2D.Raycast(gameObject.transform.position, Vector2.down,
+        RaycastHit2D rayLeft = Physics2D.Raycast(gameObject.transform.position - Vector3.right * initBounds.extents.x, Vector2.down,
+            initBounds.extents.y+ 0.05f,groundLayer); 
+        RaycastHit2D rayRight = Physics2D.Raycast(gameObject.transform.position + Vector3.right * initBounds.extents.x, Vector2.down,
             initBounds.extents.y+ 0.05f,groundLayer);
 
         //grounded = ray.collider != null;
 
-        if(ray.collider != null)
+        if(rayLeft.collider != null)
         {          
-            if(Vector2.Distance(gameObject.transform.position,ray.point) < initBounds.extents.y + 0.04f)
+            if(Vector2.Distance(gameObject.transform.position,rayLeft.point) < initBounds.extents.y + 0.04f)
             {
-                gameObject.transform.position += Vector3.up * (initBounds.extents.y + 0.04f - Vector2.Distance(gameObject.transform.position, ray.point)); 
+                gameObject.transform.position += Vector3.up * (initBounds.extents.y + 0.04f - Vector2.Distance(gameObject.transform.position, rayLeft.point)); 
+            }
+
+            gravityForce = defaultGravityForce;
+            plantRb.velocity -= Vector2.up * plantRb.velocity.y / 2;
+            grabbable = true;
+            
+            grounded = true;
+            ungroundedFrames = 0;
+        }
+        else 
+        if(rayRight.collider != null)
+        {          
+            if(Vector2.Distance(gameObject.transform.position, rayRight.point) < initBounds.extents.y + 0.04f)
+            {
+                gameObject.transform.position += Vector3.up * (initBounds.extents.y + 0.04f - Vector2.Distance(gameObject.transform.position, rayRight.point)); 
             }
 
             gravityForce = defaultGravityForce;

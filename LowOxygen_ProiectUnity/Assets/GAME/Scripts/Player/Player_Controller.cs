@@ -213,7 +213,7 @@ public class Player_Controller : MonoBehaviour
     }
     private void JumpInput()
     {
-        if (Input.GetKey(PlayerInputKeys.up))
+        if (Input.GetKey(PlayerInputKeys.up) || Input.GetKey(KeyCode.Space))
             willJump = true;
         else
             willJump = false;
