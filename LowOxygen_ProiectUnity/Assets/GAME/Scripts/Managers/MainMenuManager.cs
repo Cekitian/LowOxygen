@@ -17,6 +17,7 @@ public class MainMenuManager : MonoBehaviour
     [SerializeField] private Animator introAnimator;
     [SerializeField] private CanvasGroup menuGroup;
     [SerializeField] private CanvasGroup aboutGroup;
+    [SerializeField] private CanvasGroup controlsGroup;
 
 
 
@@ -39,6 +40,8 @@ public class MainMenuManager : MonoBehaviour
     }
     public void PlayGame()
     {
+        menuGroup.interactable = false;
+
         PlayButtonSound();
 
         StopAllCoroutines();
@@ -47,6 +50,8 @@ public class MainMenuManager : MonoBehaviour
     }
     public void ContinueGame()
     {
+        menuGroup.interactable = false;
+
         PlayButtonSound();
 
         StopAllCoroutines();
@@ -73,6 +78,33 @@ public class MainMenuManager : MonoBehaviour
             aboutGroup.alpha = 0;
             aboutGroup.blocksRaycasts = false;
             aboutGroup.interactable = false;
+
+            menuGroup.alpha = 1;
+            menuGroup.blocksRaycasts = true;
+            menuGroup.interactable = true;
+        }
+    }
+    public void Controls()
+    {
+        PlayButtonSound();
+
+        // open about screen
+
+        if (controlsGroup.alpha == 0)
+        {
+            controlsGroup.alpha = 1;
+            controlsGroup.blocksRaycasts = true;
+            controlsGroup.interactable = true;
+
+            menuGroup.alpha = 0;
+            menuGroup.blocksRaycasts = false;
+            menuGroup.interactable = false;
+        }
+        else
+        {
+            controlsGroup.alpha = 0;
+            controlsGroup.blocksRaycasts = false;
+            controlsGroup.interactable = false;
 
             menuGroup.alpha = 1;
             menuGroup.blocksRaycasts = true;

@@ -2,11 +2,20 @@ Low Oxygen este un puzzle platformer ce prezintă încercarea unui astronaut de 
 
 Mecanica principală a jocului o reprezintă plantele ce cresc in zone lipsite de oxigen, jucătorul fiind nevoit sa joace in jurul limitărilor si posibilităților oferite de acestea. Pe lângă ele, mai sunt prezente si elementele clasice specifice acestor jocuri, cum ar fi butoanele, pressure plate-urile, platforme ce se miscă, și multe altele.
 
+
 Feature-uri:
 - 27 de room-uri cu puzzle-uri diferite
 - mecanici precum butoane, platforme miscatoare, pressure plate-uri
 - vfx si sfx facute special pt proiect
+- auto-save sytem ca sa nu se piarda progresu (datele sunt salvate local pe device)
 - 5 easter egg-uri
 
-Video Link :
-https://www.youtube.com/watch?v=auB2Kbydhgw
+Video Scurt :
+https://youtu.be/auB2Kbydhgw
+
+
+Video prezentare detaliata (8:16):
+
+Recomand vizionarea lui cand ajungeti la vreun impas la un puzzle sau dupa terminarea jocului, intrucat pe langa prezentarea detaliata a mecanicilor si a conceptului, il si joc de la inceput pana la sfarsit.(Fara sa arat easter-egg urile, evident :P) 
+
+https://youtu.be/ZdMMvgseK0c

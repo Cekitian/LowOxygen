@@ -49,7 +49,6 @@ ScriptsOnlyBuild:
     - UnityEditor.U2D.Animation.BoneGizmo
     Unity.2D.IK.Editor.dll:
     - UnityEditor.U2D.IK.IKEditorManager
-    - UnityEditor.U2D.IK.IKGizmos
     Unity.2D.Tilemap.Editor.dll:
     - UnityEditor.Tilemaps.GridBrush
     - UnityEditor.Tilemaps.GridBrushEditor
@@ -1893,7 +1892,7 @@ ScriptsOnlyBuild:
     className: SpriteLibraryAsset
   - hash:
       serializedVersion: 2
-      Hash: 502d6798186ad55ee9814f23dd5ddec1
+      Hash: b4408f7b6a8b5bc44006092f97432eda
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: MainMenuManager

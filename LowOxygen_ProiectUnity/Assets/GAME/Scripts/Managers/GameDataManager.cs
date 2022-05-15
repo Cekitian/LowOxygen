@@ -11,6 +11,7 @@ public class GameDataManager : MonoBehaviour
     {
         public int currentCheckPoint;
         public int timePassed;
+        public int timePassedCurrentRun;
         public int deaths;
         public int jumps;
         public int canistersCollected;
@@ -23,6 +24,7 @@ public class GameDataManager : MonoBehaviour
         {
             currentCheckPoint = 0;
             timePassed = 0;
+            timePassedCurrentRun = 0;
             deaths = 0;
             jumps = 0;
             canistersCollected = 0;
