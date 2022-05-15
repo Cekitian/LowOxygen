@@ -134,7 +134,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   gravityForce: 5
-  plantCollider: {fileID: 9132878861873959982}
+  plantCollider: {fileID: 2615784171651826085}
 --- !u!58 &9132878861873959982
 CircleCollider2D:
   m_ObjectHideFlags: 0
