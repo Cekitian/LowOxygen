@@ -19,3 +19,17 @@ Video prezentare detaliata (8:16):
 Recomand vizionarea lui cand ajungeti la vreun impas la un puzzle sau dupa terminarea jocului, intrucat pe langa prezentarea detaliata a mecanicilor si a conceptului, il si joc de la inceput pana la sfarsit.(Fara sa arat easter-egg urile, evident :P) 
 
 https://youtu.be/ZdMMvgseK0c
+
+
+MODDING & ADDON-URI:
+
+Jocul prezinta un sistem implementat de room making(plus inca 4 camere de tip puzzle puse deja intr-un folder). Pentru a face o camera trebuie deschis meniul special, sa ii atribuiti un nume, iar dupa cu tool-urile facute deja direct in joc puteti construi un puzzle dupa placul vostru.
+Camera va fi salvata in "AppData\LocalLow\Space Rangers\Low Oxygen\Mods", unde va veni sub forma unui folder. Acest folder dupa poate fi distribuit si la alti utilizatori, similar cu drag n drop-ul de la Minecraft Forge.
+
+CONTROLAE ROOM MAKER:
+WASD - Miscarea Camerei
+Click Stanga - Place
+Click Dreapta - Destroy
+
+Meniul de Logic:
+Odata intrat in logic mode, trebuie sa dati click pe un button/pressure plate, iar dupa pe obiectul care doriti sa il conectati la acesta, printre care se numara zonele de oxigen, usile si scarile.
