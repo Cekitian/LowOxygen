@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 227c5893900c7a44fa40e1c1ae194408, type: 3}
+  m_Name: Door Big
+  m_EditorClassIdentifier: 
+  objectId: Door Big
+  theObject: {fileID: 8602130238021429550, guid: 6d75bb86624c8744785af7f277078f88, type: 3}
