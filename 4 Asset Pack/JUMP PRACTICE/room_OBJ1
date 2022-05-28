@@ -1,0 +1,18 @@
+{
+    "switches": [],
+    "plants": [],
+    "buttons": [],
+    "plates": [],
+    "finishLines": [
+        {
+            "instanceID": -1979696
+        }
+    ],
+    "finishPos": [
+        {
+            "x": 38.84123229980469,
+            "y": 0.31417083740234377,
+            "z": 0.0
+        }
+    ]
+}

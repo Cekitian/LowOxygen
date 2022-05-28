@@ -1,0 +1,90 @@
+{
+    "switches": [
+        {
+            "instanceId": 1,
+            "objectId": "Door Big",
+            "pos": {
+                "x": 18.57150650024414,
+                "y": 0.572655200958252,
+                "z": 0.0
+            },
+            "initState": false
+        },
+        {
+            "instanceId": 3,
+            "objectId": "Space Zone Small",
+            "pos": {
+                "x": 14.040718078613282,
+                "y": 3.1160974502563478,
+                "z": 0.0
+            },
+            "initState": true
+        },
+        {
+            "instanceId": 5,
+            "objectId": "Door Big",
+            "pos": {
+                "x": 18.5230655670166,
+                "y": 10.002312660217286,
+                "z": 0.0
+            },
+            "initState": true
+        }
+    ],
+    "plants": [
+        {
+            "instanceId": 2,
+            "objectId": "Grow Plant",
+            "pos": {
+                "x": 23.534561157226564,
+                "y": -0.48497071862220766,
+                "z": 0.0
+            }
+        },
+        {
+            "instanceId": 5,
+            "objectId": "Plant",
+            "pos": {
+                "x": -23.89162254333496,
+                "y": -6928.1083984375,
+                "z": 0.0
+            }
+        }
+    ],
+    "buttons": [
+        {
+            "instanceId": 6,
+            "objectId": "Button",
+            "pos": {
+                "x": 11.232415199279786,
+                "y": 0.2538290023803711,
+                "z": 0.0
+            },
+            "connectedSwitches": [
+                1,
+                5
+            ]
+        }
+    ],
+    "plates": [],
+    "finishLines": [
+        {
+            "instanceID": -1956400
+        },
+        {
+            "instanceID": -1956474
+        }
+    ],
+    "finishPos": [
+        {
+            "x": 57.02009201049805,
+            "y": 2.3893918991088869,
+            "z": 0.0
+        },
+        {
+            "x": 23.384765625,
+            "y": -2.9665307998657228,
+            "z": 0.0
+        }
+    ]
+}

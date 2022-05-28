@@ -1,0 +1,160 @@
+{
+    "switches": [
+        {
+            "instanceId": 1,
+            "objectId": "Space Zone Small",
+            "pos": {
+                "x": -6.936175346374512,
+                "y": 0.5637819766998291,
+                "z": 0.0
+            },
+            "initState": false
+        },
+        {
+            "instanceId": 4,
+            "objectId": "Door Big",
+            "pos": {
+                "x": -6.339295387268066,
+                "y": 4.338397979736328,
+                "z": 0.0
+            },
+            "initState": false
+        },
+        {
+            "instanceId": 5,
+            "objectId": "Door Big",
+            "pos": {
+                "x": -5.518277168273926,
+                "y": 4.338397979736328,
+                "z": 0.0
+            },
+            "initState": false
+        },
+        {
+            "instanceId": 6,
+            "objectId": "Door Small",
+            "pos": {
+                "x": 8.334086418151856,
+                "y": -0.6260433197021484,
+                "z": 0.0
+            },
+            "initState": false
+        },
+        {
+            "instanceId": 7,
+            "objectId": "Ladder",
+            "pos": {
+                "x": 28.661991119384767,
+                "y": -0.1920909881591797,
+                "z": 0.0
+            },
+            "initState": true
+        },
+        {
+            "instanceId": 8,
+            "objectId": "Ladder",
+            "pos": {
+                "x": 0.8890056610107422,
+                "y": 6.834712982177734,
+                "z": 0.0
+            },
+            "initState": true
+        },
+        {
+            "instanceId": 9,
+            "objectId": "Ladder",
+            "pos": {
+                "x": 0.8890056610107422,
+                "y": 15.20451545715332,
+                "z": 0.0
+            },
+            "initState": true
+        },
+        {
+            "instanceId": 12,
+            "objectId": "Door Big",
+            "pos": {
+                "x": 9.466012954711914,
+                "y": 21.55931854248047,
+                "z": 0.0
+            },
+            "initState": false
+        },
+        {
+            "instanceId": 13,
+            "objectId": "Door Big",
+            "pos": {
+                "x": 7.16716194152832,
+                "y": 21.55931854248047,
+                "z": 0.0
+            },
+            "initState": false
+        },
+        {
+            "instanceId": 14,
+            "objectId": "Door Big",
+            "pos": {
+                "x": 4.704109191894531,
+                "y": 21.51828956604004,
+                "z": 0.0
+            },
+            "initState": false
+        }
+    ],
+    "plants": [
+        {
+            "instanceId": 3,
+            "objectId": "Grow Plant",
+            "pos": {
+                "x": -6.134040832519531,
+                "y": -1.4849709272384644,
+                "z": 0.0
+            }
+        }
+    ],
+    "buttons": [
+        {
+            "instanceId": 2,
+            "objectId": "Button",
+            "pos": {
+                "x": 5.196005344390869,
+                "y": 0.11246919631958008,
+                "z": 0.0
+            },
+            "connectedSwitches": [
+                6,
+                5,
+                4,
+                1
+            ]
+        }
+    ],
+    "plates": [
+        {
+            "instanceId": 11,
+            "objectId": "Pressure Plate",
+            "pos": {
+                "x": -5.928318977355957,
+                "y": 31.791011810302736,
+                "z": 0.0
+            },
+            "connectedSwitches": [
+                14,
+                13,
+                12
+            ]
+        }
+    ],
+    "finishLines": [
+        {
+            "instanceID": -1966264
+        }
+    ],
+    "finishPos": [
+        {
+            "x": 23.060834884643556,
+            "y": 25.989599227905275,
+            "z": 0.0
+        }
+    ]
+}

@@ -1,0 +1,59 @@
+{
+    "switches": [
+        {
+            "instanceId": 1,
+            "objectId": "Ladder",
+            "pos": {
+                "x": 38.786537170410159,
+                "y": 10.939825057983399,
+                "z": 0.0
+            },
+            "initState": true
+        },
+        {
+            "instanceId": 2,
+            "objectId": "Ladder",
+            "pos": {
+                "x": 45.06732177734375,
+                "y": 14.345186233520508,
+                "z": 0.0
+            },
+            "initState": true
+        },
+        {
+            "instanceId": 3,
+            "objectId": "Ladder",
+            "pos": {
+                "x": 51.26624298095703,
+                "y": 17.29923439025879,
+                "z": 0.0
+            },
+            "initState": true
+        },
+        {
+            "instanceId": 4,
+            "objectId": "Ladder",
+            "pos": {
+                "x": 57.62593078613281,
+                "y": 21.16306495666504,
+                "z": 0.0
+            },
+            "initState": true
+        }
+    ],
+    "plants": [],
+    "buttons": [],
+    "plates": [],
+    "finishLines": [
+        {
+            "instanceID": -1963658
+        }
+    ],
+    "finishPos": [
+        {
+            "x": 65.96736145019531,
+            "y": 24.29273796081543,
+            "z": 0.0
+        }
+    ]
+}
