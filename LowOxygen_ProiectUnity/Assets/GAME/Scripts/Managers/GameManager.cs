@@ -24,6 +24,8 @@ public class GameManager : MonoBehaviour
         {
             rooms[i].SetIndex(i);
         }
+        if (rooms.Length == 0)
+            return;
         DisableAllRooms();
         SetCurrentRoom(rooms[GameDataManager.Instance.DATA.currentCheckPoint]);
 
@@ -42,7 +44,7 @@ public class GameManager : MonoBehaviour
             respawnPoint = currentRoom.GetRespawnPoint();
             GameDataManager.Instance.DATA.currentCheckPoint = currentRoom.GetIndex();
         }
-
+        newRoom.SetInitStats();
     }
     public int GetCurrentRoomIndex()
     {
@@ -50,6 +52,7 @@ public class GameManager : MonoBehaviour
     }
     public void RespawnPlayer()
     {
+        if(player != null && respawnPoint != null)
         player.transform.position = respawnPoint.position;
         currentRoom.ResetRoomToOriginalState();
     }
@@ -95,5 +98,15 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    
+    public void ModMode(GameObject room)
+    {
+        RoomManager roomComp = room.GetComponent<RoomManager>();
+        rooms = new RoomManager[1] { roomComp };
+
+        SetCurrentRoom(roomComp);
+        RespawnPlayer();
+
+    }
+
+
 }

@@ -69,4 +69,19 @@ public class PressureButton : MonoBehaviour
             }
         }
     }
+
+    public void AddNewSwitch(Switch newSwitch)
+    {
+        Switch[] copy = new Switch[switches.Length + 1];
+        for (int i = 0; i < copy.Length - 1; i++)
+        {
+            copy[i] = switches[i];
+        }
+        copy[copy.Length - 1] = newSwitch;
+        switches = copy;
+    }
+    public Switch[] GetSwitches()
+    {
+        return switches;
+    }
 }
