@@ -27,8 +27,7 @@ public class Player : MonoBehaviour
     private void Awake()
     {
         Instance = this;
-        oxygenState.ChangedOxygenState += ChangedOxygenState;
-       
+        oxygenState.ChangedOxygenState += ChangedOxygenState;       
     }
 
     private void Update()

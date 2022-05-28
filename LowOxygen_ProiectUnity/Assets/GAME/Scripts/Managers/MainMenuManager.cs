@@ -18,6 +18,7 @@ public class MainMenuManager : MonoBehaviour
     [SerializeField] private CanvasGroup menuGroup;
     [SerializeField] private CanvasGroup aboutGroup;
     [SerializeField] private CanvasGroup controlsGroup;
+    [SerializeField] private CanvasGroup modsGroup;
 
 
 
@@ -105,6 +106,33 @@ public class MainMenuManager : MonoBehaviour
             controlsGroup.alpha = 0;
             controlsGroup.blocksRaycasts = false;
             controlsGroup.interactable = false;
+
+            menuGroup.alpha = 1;
+            menuGroup.blocksRaycasts = true;
+            menuGroup.interactable = true;
+        }
+    }
+    public void Mods()
+    {
+        PlayButtonSound();
+
+        // open about screen
+
+        if (modsGroup.alpha == 0)
+        {
+            modsGroup.alpha = 1;
+            modsGroup.blocksRaycasts = true;
+            modsGroup.interactable = true;
+
+            menuGroup.alpha = 0;
+            menuGroup.blocksRaycasts = false;
+            menuGroup.interactable = false;
+        }
+        else
+        {
+            modsGroup.alpha = 0;
+            modsGroup.blocksRaycasts = false;
+            modsGroup.interactable = false;
 
             menuGroup.alpha = 1;
             menuGroup.blocksRaycasts = true;

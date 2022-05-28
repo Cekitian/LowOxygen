@@ -18,17 +18,6 @@ public class RoomManager : MonoBehaviour
     private List<Plant_Grow> growPlants = new List<Plant_Grow>();
     private void Awake()
     {
-        initialPos = new Vector3[objects.Length];
-        initialState = new bool[switches.Length];
-        foreach(GameObject x in objects)
-        {
-            if(x.TryGetComponent(out Plant_Grow y))
-            {
-                growPlants.Add(y);
-            }
-        }
-
-
         SetInitStats();
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -74,8 +63,30 @@ public class RoomManager : MonoBehaviour
     {
         return roomIndex; ;
     }
-    private void SetInitStats()
+    public void AddNewSwitch(Switch newSwitch)
     {
+        Switch[] clone = switches;
+
+        switches = new Switch[switches.Length + 1];
+
+        for (int i = 0; i < clone.Length; i++)
+        {
+            switches[i] = clone[i];
+        }
+
+        switches[switches.Length - 1] = newSwitch;
+    }
+    public void SetInitStats()
+    {
+        initialPos = new Vector3[objects.Length];
+        initialState = new bool[switches.Length];
+        foreach (GameObject x in objects)
+        {
+            if (x.TryGetComponent(out Plant_Grow y))
+            {
+                growPlants.Add(y);
+            }
+        }
         for (int i = 0; i < objects.Length; i++)
         {
             initialPos[i] = objects[i].transform.position;
@@ -85,5 +96,17 @@ public class RoomManager : MonoBehaviour
             initialState[i] = switches[i].GetState();
         }
     }
+    public void AddNewObject(GameObject newObject)
+    {
+        GameObject[] clone = objects;
+        objects = new GameObject[objects.Length + 1];
+
+        for(int i = 0; i< clone.Length; i++)
+        {
+            objects[i] = clone[i];
+        }
+        objects[objects.Length - 1] = newObject;
+    }
+
 
 }
