@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     private Transform respawnPoint;
     private RoomManager currentRoom;
     private Player player;
+    private bool modMode;
     private void Awake()
     {
         Instance = this;
@@ -20,12 +21,14 @@ public class GameManager : MonoBehaviour
     {
         player = Player.Instance;
 
+        Debug.Log(rooms.Length);
         for(int i = 0; i <rooms.Length; i++)
         {
             rooms[i].SetIndex(i);
         }
-        if (rooms.Length == 0)
+        if (rooms.Length == 1)
             return;
+
         DisableAllRooms();
         SetCurrentRoom(rooms[GameDataManager.Instance.DATA.currentCheckPoint]);
 
@@ -39,12 +42,16 @@ public class GameManager : MonoBehaviour
         EnableCloseAdjacentRooms();
         DisableAjacentRooms();
 
-        if (currentRoom.GetIndex() >= GameDataManager.Instance.DATA.currentCheckPoint)
+        newRoom.SetInitStats();
+        if (currentRoom.GetIndex() >= GameDataManager.Instance.DATA.currentCheckPoint || modMode)
         {
             respawnPoint = currentRoom.GetRespawnPoint();
+            if(!modMode)
             GameDataManager.Instance.DATA.currentCheckPoint = currentRoom.GetIndex();
+
+            if (modMode)
+                RespawnPlayer();
         }
-        newRoom.SetInitStats();
     }
     public int GetCurrentRoomIndex()
     {
@@ -52,8 +59,15 @@ public class GameManager : MonoBehaviour
     }
     public void RespawnPlayer()
     {
+        Debug.Log(modMode + " RESPAWNING PLAYER");
+        Debug.Log(player);
+        Debug.Log(respawnPoint);
         if(player != null && respawnPoint != null)
-        player.transform.position = respawnPoint.position;
+        {
+            Debug.Log(modMode + " aaaaa RESPAWNING PLAYER");
+            player.transform.position = respawnPoint.position;
+
+        }
         currentRoom.ResetRoomToOriginalState();
     }
 
@@ -100,11 +114,17 @@ public class GameManager : MonoBehaviour
 
     public void ModMode(GameObject room)
     {
+        Debug.Log("cox");
         RoomManager roomComp = room.GetComponent<RoomManager>();
         rooms = new RoomManager[1] { roomComp };
+        
+        modMode = true;
+        player = Player.Instance;
+        respawnPoint = roomComp.GetRespawnPoint();
 
+        Debug.Log(respawnPoint);
         SetCurrentRoom(roomComp);
-        RespawnPlayer();
+        //RespawnPlayer();
 
     }
 

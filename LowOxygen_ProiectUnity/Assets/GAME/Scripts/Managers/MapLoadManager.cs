@@ -286,7 +286,7 @@ public class MapLoadManager : MonoBehaviour
             spawnedGameObjects.Add(a);
 
         }
-        if (GameManager.Instance != null)
+      //  if (GameManager.Instance != null)
         {
             GameManager.Instance.ModMode(theRoom);
         }
