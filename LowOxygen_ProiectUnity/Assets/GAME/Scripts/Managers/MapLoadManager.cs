@@ -11,21 +11,24 @@ public class MapLoadManager : MonoBehaviour
 
     public List<GameObject> spawnedGameObjects = new List<GameObject>();
     public GameObject theRoom;
-    [SerializeField]
-    private GameObject emptyRoomPrefab;
-    [SerializeField]
-    private List<TileObject> tiles;
-    [SerializeField]
-    private List<RoomObject> objects;
-   [SerializeField] private GameObject finishLine;
+    [SerializeField] private GameObject emptyRoomPrefab;
+    [SerializeField] private List<TileObject> tiles;
+    [SerializeField] private List<RoomObject> objects;
+    [SerializeField] private List<DecorObject> decors;
+    [SerializeField] private GameObject finishLine;
 
     private void Awake()
     {
         Instance = this;
+    }
+
+    private void Start()
+    {
 
         List<string> roomsGR = ModLoadedManager.Instance.GetRoomGRMap();
         List<string> roomsBG = ModLoadedManager.Instance.GetRoomBGMap();
         List<string> roomsOBJ = ModLoadedManager.Instance.GetRoomOBJMap();
+        List<string> roomsD = ModLoadedManager.Instance.GetRoomDMap();
 
         for(int i = 0; i < roomsGR.Count; i++)
         {
@@ -35,6 +38,7 @@ public class MapLoadManager : MonoBehaviour
             LoadTileMap(roomsGR[i], grid.groundTileMap);
             LoadTileMap(roomsBG[i], grid.backgroundTileMap);
             LoadRoomData(roomsOBJ[i], room);
+            LoadDecorData(roomsD[i], room);
             
             if(EditorManager.Instance != null)
             EditorManager.Instance.AddRoomToList(room, grid.groundTileMap, grid.backgroundTileMap, i+1);
@@ -86,6 +90,11 @@ public class MapLoadManager : MonoBehaviour
 
         public List<GameObject> finishLines = new List<GameObject>();
         public List<Vector3> finishPos = new List<Vector3>();
+    }
+    public class RoomDecorData
+    {
+        public List<string> decorId = new List<string>();
+        public List<Vector3> pos = new List<Vector3>();
     }
 
     public void SaveTileMap(string savePath, Tilemap map)
@@ -189,6 +198,21 @@ public class MapLoadManager : MonoBehaviour
         string json = JsonUtility.ToJson(objectData, true);
         File.WriteAllText(savePath, json);
     }
+    public void SaveDecorData(string savePath, List<GameObject> roomObjects)
+    {
+        RoomDecorData decorData = new RoomDecorData();
+        foreach(GameObject x in roomObjects)
+        {
+            if(x.TryGetComponent(out Decor decorScript))
+            {
+                decorData.decorId.Add(decorScript.decorId);
+                decorData.pos.Add(x.transform.position);
+            }
+        }
+
+        string json = JsonUtility.ToJson(decorData, true);
+        File.WriteAllText(savePath, json);
+    }
     public void LoadTileMap(string loadPath, Tilemap map)
     {
         string json = File.ReadAllText(loadPath);
@@ -286,9 +310,26 @@ public class MapLoadManager : MonoBehaviour
             spawnedGameObjects.Add(a);
 
         }
-      //  if (GameManager.Instance != null)
+        if (GameManager.Instance != null)
         {
             GameManager.Instance.ModMode(theRoom);
+        }
+    }
+    public void LoadDecorData(string loadPath, GameObject roomParent)
+    {
+        string json = File.ReadAllText(loadPath);
+        RoomDecorData decorData = JsonUtility.FromJson<RoomDecorData>(json);
+
+        for(int i = 0; i < decorData.decorId.Count; i++)
+        {
+            DecorObject newDecor = decors.Find(sw => sw.decorId == decorData.decorId[i]);
+
+            var decor = Instantiate(newDecor.decor, decorData.pos[i], Quaternion.identity, roomParent.transform);
+            
+            decor.AddComponent(typeof(Decor));
+            decor.GetComponent<Decor>().decorId = newDecor.decorId;
+
+            spawnedGameObjects.Add(decor);
         }
     }
 

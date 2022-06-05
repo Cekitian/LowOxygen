@@ -41,14 +41,14 @@ public class EditorManager : MonoBehaviour
     }
     private void Start()
     {
-        if (ModLoadedManager.Instance.GetRoomGRMap().Count > 0)
+      /*  if (ModLoadedManager.Instance.GetRoomGRMap().Count > 0)
         {
             createRoomButton.alpha = 0;
             createRoomButton.interactable = false;
             tileMapEditor.SetTilemap(rooms[0].GRMap);
             SetRoom(rooms[0].roomObject, rooms[0].GRMap, rooms[0].BGMap);
 
-        }   
+        }   */
     }
     private void Update()
     {
@@ -86,6 +86,11 @@ public class EditorManager : MonoBehaviour
         newRoom.BGMap = bgMap;
         newRoom.id = id;
         rooms.Add(newRoom);
+
+        createRoomButton.alpha = 0;
+        createRoomButton.interactable = false;
+        tileMapEditor.SetTilemap(rooms[0].GRMap);
+        SetRoom(rooms[0].roomObject, rooms[0].GRMap, rooms[0].BGMap);
     }
     public void SetRoom(GameObject room, Tilemap groundMap, Tilemap bgMap)
     {
@@ -113,6 +118,7 @@ public class EditorManager : MonoBehaviour
             MapLoadManager.Instance.SaveTileMap(ModLoadedManager.Instance.GetDataPath() + "/" + "room_" + "GR" + x.id.ToString(), currentGroundTileMap);
             MapLoadManager.Instance.SaveTileMap(ModLoadedManager.Instance.GetDataPath() + "/" + "room_" + "BG" + x.id.ToString(), currentBackgroundTileMap);
             MapLoadManager.Instance.SaveRoomData(ModLoadedManager.Instance.GetDataPath() + "/" + "room_" + "OBJ" + x.id.ToString(), MapLoadManager.Instance.spawnedGameObjects);
+            MapLoadManager.Instance.SaveDecorData(ModLoadedManager.Instance.GetDataPath() + "/" + "room_" + "D" + x.id.ToString(), MapLoadManager.Instance.spawnedGameObjects);      
         }
 
     }

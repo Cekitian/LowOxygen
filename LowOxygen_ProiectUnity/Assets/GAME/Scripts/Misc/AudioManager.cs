@@ -48,7 +48,7 @@ public class AudioManager : MonoBehaviour
         inSpace = newValue;
     }
 
-    public void PlaySound(AudioClip clip, float volume, float pitch, bool loop)
+    public AudioSource PlaySound(AudioClip clip, float volume, float pitch, bool loop)
     {
         GameObject clipHolder = new GameObject();
         clipHolder.AddComponent(typeof(AudioSource));
@@ -63,6 +63,35 @@ public class AudioManager : MonoBehaviour
         source.Play();
 
         if (!loop)
-            Destroy(clipHolder, source.clip.length / pitch + 0.1f); 
+            Destroy(clipHolder, source.clip.length / pitch + 0.1f);
+
+        return source;
+    }
+
+    public AudioSource PlaySound(AudioClip clip, float volume, float pitch, bool loop, float delay)
+    {
+        GameObject clipHolder = new GameObject();
+        clipHolder.AddComponent(typeof(AudioSource));
+
+        AudioSource source = clipHolder.GetComponent<AudioSource>();
+
+        source.clip = clip;
+        source.volume = volume * volumeModifier;
+        source.pitch = pitch;
+        source.loop = loop;
+
+        StartCoroutine(PlaySoundDelayed(source,delay));
+
+        return source;
+    }
+
+    private IEnumerator PlaySoundDelayed(AudioSource source, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        source.Play();
+
+        if (!source.loop)
+            Destroy(source.gameObject, source.clip.length / source.pitch + 0.1f);
+        yield break;
     }
 }

@@ -22,9 +22,9 @@ public class TileMapEditor : MonoBehaviour
 
     private void LateUpdate()
     {
-        if (!editorActive)
+        if (!editorActive || currentTileMap == null)
             return;
-
+        
         Vector3Int mousePos = currentTileMap.WorldToCell(cam.ScreenToWorldPoint(Input.mousePosition));
         if (Input.GetMouseButton(0))
         {

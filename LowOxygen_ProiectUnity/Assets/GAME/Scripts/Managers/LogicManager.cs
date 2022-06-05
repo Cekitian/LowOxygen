@@ -24,6 +24,10 @@ public class LogicManager : MonoBehaviour
             CheckForButton(mousePos);
             CheckForSwitch(mousePos);
         }
+        if(Input.GetMouseButtonDown(1))
+        {
+            CheckForSwitchToDelete(mousePos);
+        }
     }
     public void ChangeActiveState()
     {
@@ -41,6 +45,8 @@ public class LogicManager : MonoBehaviour
             editorActive = false;
             selectedButton = null;
             selectedPlate = null;
+
+            DestroyCircles();
         }
         else
         {
@@ -103,6 +109,23 @@ public class LogicManager : MonoBehaviour
             }
         }
     }
+    public void CheckForSwitchToDelete(Vector3 pos)
+    {
+        pos.z = 0;
+        for (int i = 0; i < MapLoadManager.Instance.spawnedGameObjects.Count; i++)
+        {
+            if (Vector3.Distance(MapLoadManager.Instance.spawnedGameObjects[i].transform.position, pos) < 1)
+            {
+                if (MapLoadManager.Instance.spawnedGameObjects[i].TryGetComponent(out Switch y))
+                {
+                    Debug.Log("REMOVING SWITCH");
+                    RemoveSwitchFromButton(y);
+
+                }
+
+            }
+        }
+    }
     public void AddSwitchToButton(Switch theSwitch)
     {
         if (selectedButton == null && selectedPlate == null)
@@ -124,6 +147,41 @@ public class LogicManager : MonoBehaviour
                 selectedButton.GetComponent<EditorObject>().relatedIds.Add(theSwitch.GetComponent<EditorObject>().instanceId);
                 selectedButton.AddNewSwitch(theSwitch);
             }  
+        }
+    }
+    public void RemoveSwitchFromButton(Switch theSwitch)
+    {
+        if (selectedButton == null && selectedPlate == null)
+            return;
+
+        DestroyCircles();
+        if (selectedPlate != null)
+        {
+            if (selectedPlate.GetComponent<EditorObject>().relatedIds.Exists(t => t == theSwitch.GetComponent<EditorObject>().instanceId))
+            {
+                selectedPlate.GetComponent<EditorObject>().relatedIds.Remove(theSwitch.GetComponent<EditorObject>().instanceId);
+                selectedPlate.RemoveSwitch(theSwitch);
+            }
+
+            SpawnCircle(selectedPlate.gameObject.transform.position);
+            foreach (Switch x in selectedPlate.GetSwitches())
+            {
+                SpawnCircle(x.gameObject.transform.position);
+            }
+        }
+        else if (selectedButton != null)
+        {
+            if (selectedButton.GetComponent<EditorObject>().relatedIds.Exists(v => v == theSwitch.GetComponent<EditorObject>().instanceId))
+            {
+                selectedButton.GetComponent<EditorObject>().relatedIds.Remove(theSwitch.GetComponent<EditorObject>().instanceId);
+                selectedButton.RemoveSwitch(theSwitch);
+            }
+
+            SpawnCircle(selectedButton.gameObject.transform.position);
+            foreach (Switch x in selectedButton.GetSwitches())
+            {
+                SpawnCircle(x.gameObject.transform.position);
+            }
         }
     }
 

@@ -116,7 +116,6 @@ public class ModsManager : MonoBehaviour
              + "_description");
         // to get the name of the directory
     }
-
     private void CheckForMods()
     {
         string modsPath = Application.persistentDataPath + modDirectoryName;
@@ -134,5 +133,6 @@ public class ModsManager : MonoBehaviour
         directories = Directory.GetDirectories(modsPath);
 
     }
+
 
 }

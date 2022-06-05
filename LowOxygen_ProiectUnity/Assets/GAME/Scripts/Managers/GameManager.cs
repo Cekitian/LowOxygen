@@ -5,21 +5,26 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
-    [SerializeField]
-    private RoomManager[] rooms;
+    [SerializeField] private AudioClip music;
+    [SerializeField] private RoomManager[] rooms;
+    [SerializeField] private bool modMode = false;
 
 
+    private AudioSource musicSource;
     private Transform respawnPoint;
     private RoomManager currentRoom;
     private Player player;
-    private bool modMode;
     private void Awake()
     {
         Instance = this;
+        musicSource = AudioManager.Instance.PlaySound(music, 0f, 1f, true,1f);
     }
     private void Start()
     {
         player = Player.Instance;
+
+        if (modMode)
+            return;
 
         Debug.Log(rooms.Length);
         for(int i = 0; i <rooms.Length; i++)
@@ -33,6 +38,10 @@ public class GameManager : MonoBehaviour
         SetCurrentRoom(rooms[GameDataManager.Instance.DATA.currentCheckPoint]);
 
         RespawnPlayer();
+    }
+    public AudioSource GetGameMusic()
+    {
+        return musicSource;
     }
     public void SetCurrentRoom(RoomManager newRoom)
     {
@@ -117,14 +126,12 @@ public class GameManager : MonoBehaviour
         Debug.Log("cox");
         RoomManager roomComp = room.GetComponent<RoomManager>();
         rooms = new RoomManager[1] { roomComp };
-        
-        modMode = true;
         player = Player.Instance;
         respawnPoint = roomComp.GetRespawnPoint();
 
         Debug.Log(respawnPoint);
         SetCurrentRoom(roomComp);
-        //RespawnPlayer();
+        RespawnPlayer();
 
     }
 

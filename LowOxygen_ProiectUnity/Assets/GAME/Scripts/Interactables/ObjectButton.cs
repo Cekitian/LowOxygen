@@ -61,6 +61,21 @@ public class ObjectButton : MonoBehaviour
         copy[copy.Length - 1] = newSwitch;
         switches = copy;
     }
+    public void RemoveSwitch(Switch theSwitch)
+    {
+        Switch[] copy = new Switch[switches.Length - 1];
+        int j = 0;
+        for(int i = 0; i < copy.Length; i++)
+        {
+            while(theSwitch.GetInstanceID() == switches[j].GetInstanceID())
+            {
+                j++;
+            }
+            copy[i] = switches[j];
+            j++;
+        }
+        switches = copy;
+    }
     public Switch[] GetSwitches()
     {
         return switches;

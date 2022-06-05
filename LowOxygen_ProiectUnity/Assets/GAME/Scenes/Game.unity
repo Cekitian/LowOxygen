@@ -2512,11 +2512,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2592338778332983710, guid: e9a2dd74c8425a84c96db525f7c189c7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2799
+      value: 42
       objectReference: {fileID: 0}
     - target: {fileID: 2592338778332983710, guid: e9a2dd74c8425a84c96db525f7c189c7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 297
+      value: -2.96
       objectReference: {fileID: 0}
     - target: {fileID: 2592338778332983710, guid: e9a2dd74c8425a84c96db525f7c189c7, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2549,6 +2549,10 @@ PrefabInstance:
     - target: {fileID: 2592338778332983710, guid: e9a2dd74c8425a84c96db525f7c189c7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2592338778996329309, guid: e9a2dd74c8425a84c96db525f7c189c7, type: 3}
+      propertyPath: m_SortingLayer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2592338778996329314, guid: e9a2dd74c8425a84c96db525f7c189c7, type: 3}
       propertyPath: m_LocalPosition.x
@@ -14031,6 +14035,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6b54a1b999880b409b1c18a7671ba3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  music: {fileID: 8300000, guid: 3b533db705fab5245859f29f9a2784f4, type: 3}
   rooms:
   - {fileID: 869576969}
   - {fileID: 1604157242}
@@ -14059,6 +14064,7 @@ MonoBehaviour:
   - {fileID: 2046376737}
   - {fileID: 200751101}
   - {fileID: 1437768495}
+  modMode: 0
 --- !u!4 &1492900172
 Transform:
   m_ObjectHideFlags: 0
@@ -14424,11 +14430,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7187583023086286392, guid: 62755b872b6ead340836ebacd5fa42bf, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2799
+      value: 42
       objectReference: {fileID: 0}
     - target: {fileID: 7187583023086286392, guid: 62755b872b6ead340836ebacd5fa42bf, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 305
+      value: 5.04
       objectReference: {fileID: 0}
     - target: {fileID: 7187583023086286392, guid: 62755b872b6ead340836ebacd5fa42bf, type: 3}
       propertyPath: m_LocalPosition.z
@@ -15632,7 +15638,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2119489520
 MonoBehaviour:
   m_ObjectHideFlags: 0

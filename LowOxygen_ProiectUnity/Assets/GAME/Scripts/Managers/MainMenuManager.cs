@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class MainMenuManager : MonoBehaviour
 {
+    [SerializeField] private AudioClip menuMusic;
     [SerializeField] private AudioClip buttonSound;
     [SerializeField] private GameObject turboButton;
     [Space]
@@ -20,7 +21,7 @@ public class MainMenuManager : MonoBehaviour
     [SerializeField] private CanvasGroup controlsGroup;
     [SerializeField] private CanvasGroup modsGroup;
 
-
+    private AudioSource musicSource;
 
     private void Awake()
     {
@@ -149,6 +150,10 @@ public class MainMenuManager : MonoBehaviour
     {
         TurboManager.Instance.ChangeTurboState();
     }
+    public void PlayButtonSound()
+    {
+        AudioManager.Instance.PlaySound(buttonSound, 1, 1.5f, false);
+    }
     private void ResetStats()
     {
         bool wonGame = GameDataManager.Instance.DATA.wonGame;
@@ -168,10 +173,6 @@ public class MainMenuManager : MonoBehaviour
 
 
         GameDataManager.Instance.SaveData();
-    }
-    private void PlayButtonSound()
-    {
-        AudioManager.Instance.PlaySound(buttonSound, 1, 1.5f, false);
     }
     private void DisplayRecordTime()
     {
@@ -217,6 +218,8 @@ public class MainMenuManager : MonoBehaviour
         {
             blackScreen.color += new Color(0, 0, 0, Time.fixedDeltaTime);
 
+            musicSource.volume = (1 - blackScreen.color.a) / 2;
+
             yield return new WaitForSeconds(Time.fixedDeltaTime);
         }
         yield return new WaitForSeconds(1f);
@@ -227,10 +230,13 @@ public class MainMenuManager : MonoBehaviour
     private IEnumerator FadeFromBlack()
     {
         blackScreen.color = Color.black;
+        yield return new WaitForSeconds(0.1f);
+        musicSource = AudioManager.Instance.PlaySound(menuMusic, 0f, 1f, true);
 
         while (blackScreen.color.a > 0)
         {
             blackScreen.color -= new Color(0, 0, 0, Time.fixedDeltaTime / 2);
+            musicSource.volume = (1 - blackScreen.color.a) / 2;
 
             yield return new WaitForSeconds(Time.fixedDeltaTime);
         }

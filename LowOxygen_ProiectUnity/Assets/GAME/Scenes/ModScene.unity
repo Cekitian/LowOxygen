@@ -139,7 +139,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &150296276
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1391,7 +1391,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6b54a1b999880b409b1c18a7671ba3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  music: {fileID: 8300000, guid: 3b533db705fab5245859f29f9a2784f4, type: 3}
   rooms: []
+  modMode: 1
 --- !u!4 &1003431701
 Transform:
   m_ObjectHideFlags: 0

@@ -34,6 +34,8 @@ public class ModLoadedManager : MonoBehaviour
         //search for rooms
         //rooms naming convention for ground : room_GR1
         //rooms naming convention for background : room_BG1
+        //rooms naming convention for objects : room_OBJ1
+        //rooms naming convention for decor : room_D1
 
         int currentSearchedRoom = 1;
 
@@ -42,6 +44,7 @@ public class ModLoadedManager : MonoBehaviour
             roomPaths.Add(modFolderDataPath + "/room_GR" + currentSearchedRoom.ToString());
             currentSearchedRoom++;
         }
+        Debug.Log(currentSearchedRoom);
         return roomPaths;
     }  
     public List<string> GetRoomBGMap()
@@ -51,6 +54,8 @@ public class ModLoadedManager : MonoBehaviour
         //search for rooms
         //rooms naming convention for ground : room_GR1
         //rooms naming convention for background : room_BG1
+        //rooms naming convention for objects : room_OBJ1
+        //rooms naming convention for decor : room_D1
 
         int currentSearchedRoom = 1;
 
@@ -68,12 +73,33 @@ public class ModLoadedManager : MonoBehaviour
         //search for rooms
         //rooms naming convention for ground : room_GR1
         //rooms naming convention for background : room_BG1
+        //rooms naming convention for objects : room_OBJ1
+        //rooms naming convention for decor : room_D1
 
         int currentSearchedRoom = 1;
 
         while (File.Exists(modFolderDataPath + "/room_OBJ" + currentSearchedRoom.ToString()))
         {
             roomPaths.Add(modFolderDataPath + "/room_OBJ" + currentSearchedRoom.ToString());
+            currentSearchedRoom++;
+        }
+        return roomPaths;
+    }
+    public List<string> GetRoomDMap()
+    {
+        List<string> roomPaths = new List<string>();
+
+        //search for rooms
+        //rooms naming convention for ground : room_GR1
+        //rooms naming convention for background : room_BG1
+        //rooms naming convention for objects : room_OBJ1
+        //rooms naming convention for decor : room_D1
+
+        int currentSearchedRoom = 1;
+
+        while (File.Exists(modFolderDataPath + "/room_D" + currentSearchedRoom.ToString()))
+        {
+            roomPaths.Add(modFolderDataPath + "/room_D" + currentSearchedRoom.ToString());
             currentSearchedRoom++;
         }
         return roomPaths;
